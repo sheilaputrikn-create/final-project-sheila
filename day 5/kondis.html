@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penilaian Siswa</title>
+</head>
+<body>
+    <h2>Penilaian Siswa Binus</h2>
+
+    <!--fora input nilai-->
+
+    <label for="nilai">Masukan Nilai:</label>
+    <input type="number" id="nilai" placeholder="Masukan Nilai">
+    <button onclick="cekNilai()">cek nilai</button>
+
+    <!-- Tempat menampilkan hasil-->
+     <p id="hasil"></p>
+
+     <script>
+        // fungsi untuk mengecek nilai dan menampilkan grade
+        function cekNilai() {
+            // mengambil nilai dari input
+            var nilai = document.getElementById("nilai").value;
+            var hasil = "";
+
+        // cek kondisi nilai dan tentukan grade
+        if (nilai >= 90) {
+            hasil = "Nilai kamu adalah A.";
+        } else if (nilai >= 80) {
+            hasil = "Nilai kamu adalah B.";
+        } else if (nilai >= 70) {
+            hasil = "Nilai kamu adalah C.";
+        } else {
+            hasil = "Nilai kamu adalah D.";
+        }
+
+        // menampilkan hasil
+        document.getElementById("hasil").innerHTML = hasil;
+        }
+     </script>
+</body>
+</html>

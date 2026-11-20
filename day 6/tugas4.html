@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEK BULAN</title>
+</head>
+<body>
+    <h2>Pilih bulan berdasarkan nomor</h2>
+
+    <label for="Bulan">Masukkan Nomor Bulan</label>
+
+    <input type="number" id="Bulan" placeholder="Masukan number">
+
+    <button onclick="cekBulan()">Cek Bulan</button>
+
+    <!-- Tempat menampilkan hasil -->
+    <p id="hasilBulan"></p>
+
+    <script>
+        // Fungsi untuk mengecek Bulan
+        function cekBulan() {
+
+            // Mengambil nilai input
+            var numberBulan = parseInt(document.getElementById("Bulan").value);
+            var hasil = "";
+
+            switch (numberBulan) {
+
+             case 1:
+                    hasil = "Bulan ini adalah bulan Januari.";
+                    break;
+
+                case 2:
+                    hasil = "Bulan ini adalah bulan Februari.";
+                    break;
+
+                case 3:
+                    hasil = "Bulan ini adalah bulan Maret.";
+                    break;
+
+                case 4:
+                    hasil = "Bulan ini adalah bulan April.";
+                    break;
+
+                case 5:
+                    hasil = "Bulan ini adalah bulan Mei.";
+                    break;
+
+                case 6:
+                    hasil = "Bulan ini adalah bulan Juni.";
+                    break;
+
+                case 7:
+                    hasil = "Bulan ini adalah bulan Juli.";
+                    break;
+                case 8:
+                    hasil = "Bulan ini adalah bulan Agustus.";
+                    break;
+                case 9:
+                    hasil = "Bulan ini adalah bulan September.";
+                    break;
+                case 10:
+                    hasil = "Bulan ini adalah bulan Oktober.";
+                    break;
+                case 11:
+                    hasil = "Bulan ini adalah bulan November.";
+                    break;
+                case 12:
+                    hasil = "Bulan ini adalah bulan Desember.";
+                    break;
+              default:
+                    hasil = "number hari tidak valid. Masukkan angka 1 sampai 12.";
+            }
+             // Menampilkan hasil
+            document.getElementById("hasilBulan").innerHTML = hasil;
+
+        }
+        </script>
+</body>
+</html>

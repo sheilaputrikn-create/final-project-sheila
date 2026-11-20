@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bio Data Siswa</title>
+</head>
+<body>
+
+    <h2>BIO DATA SISWA</h2>
+
+    <div class="identitas">Nama = Sheila</div>
+    <div class="identitas">Kelas = X TKJ</div>
+    <div class="identitas">Jurusan = Komputer dan Jaringan</div>
+
+    <h2>Formulir Pendaftaran</h2>
+
+    <form onsubmit="return tampilkanBiodata()">
+        <label for="nama">Nama siswa</label>
+        <input type="text" id="nama" name="nama">
+
+        <br><br>
+
+        <input type="submit" value="Tampilkan Bio Data">
+    </form>
+
+    <h2>Hasil Bio Data</h2>
+
+    <p id="hasil"></p>
+
+    <script>
+        function tampilkanBiodata() {
+
+            let nama = document.getElementById("nama").value;
+
+            let identitas = document.getElementsByClassName("identitas");
+
+            if (nama === "") {
+                alert("Nama harus diisi");
+                return false;
+            }
+
+            alert("Selamat datang, " + nama + "!");
+
+            let kelas = identitas[1].textContent;
+            let jurusan = identitas[2].textContent;
+
+            document.getElementById("hasil").innerHTML =
+                "Nama: " + nama + "<br>" +
+                kelas + "<br>" +
+                jurusan;
+
+            return false;
+        }
+    </script>
+
+</body>
+</html>

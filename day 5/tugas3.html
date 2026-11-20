@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 3</title>
+</head>
+<body>
+    <h2>Rating restoran Sheila</h2>
+
+    <!--fora input nilai-->
+
+    <label for="Rating">Masukan Rating:</label>
+    <input type="number" id="Rating" placeholder="Masukan Rating">
+    <button onclick="cekRating()">cek Rating</button>
+
+    <!-- Tempat menampilkan hasil-->
+     <p id="hasil"></p>
+
+     <script>
+        // fungsi untuk mengecek Rating dan menampilkan grade
+        function cekRating() {
+            // mengambil Rating dari input
+            var Rating = document.getElementById("Rating").value;
+            var hasil = "";
+
+        // cek kondisi Rating dan tentukan grade
+        if (Rating >= 9) {
+            hasil = "Sangat enak.";
+        } else if (Rating >= 7) {
+            hasil = "Enak. ";
+        } else if (Rating >= 5) {
+            hasil = "Cukup Enak.";
+        } else if (Rating >= 3) {
+            hasil = "Kurang Enak.";
+        } else if (Rating >= 1) {
+            hasil = "Tidak Enak. " 
+        } else {
+            hasil = "Tidak Valid"
+        }
+
+        // menampilkan hasil
+        document.getElementById("hasil").innerHTML = hasil;
+        }
+     </script>
+</body>
+</html>

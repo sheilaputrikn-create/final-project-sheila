@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="tampilkanArray()">
+    <h1>Contoh Array di Javascript</h1>
+    <p id="Pertama"></p>
+    <p id="Kedua"></p>
+    <p id="Hapus"></p>
+    <p id="HapusPertama"></p>
+    <p id="Panjang"></p>
+    <p id="SemuaHewan"></p>
+<script>
+    function tampilkanArray() {
+        // membuat array sederhana berisi nama-nama hewan
+        var Hewan = ["Kambing", "Sapi", "Monyet", "Buaya", "Keledai", "Kancil", "Unta", "Kelinci", "Ular", "Ayam" ];
+        // mengakses elemen dari array
+        document.getElementById("Pertama").innerHTML = "Hewan Pertama: " + Hewan[0];
+        document.getElementById("Kedua").innerHTML = "Hewan Kedua: " + Hewan[1];
+        // menambahkan hewan baru ke array
+        Hewan.push("Jerapah"); // 'push' digunakan untuk menambah item
+        // menghapus Hewan terakhir dari array menggunakan pop
+        var HewanTerakhir = Hewan.pop(); // 'pop' digunakan untuk menghapus hewan terakhir
+        // menghapus hewan pertama dari array menggunakan pop
+        var HewanPertama = Hewan.shift(); // 'shift' digunakan untuk menghapus hewan pertama
+        // menampilkan hasil setelah menghapus hewan terakhir
+        document.getElementById("Hapus").innerHTML = "Hewan Terakhir Yang Dihapus: " + HewanTerakhir;
+        // Menampilkan hasil setelah menghapus hewan pertama
+        document.getElementById("HapusPertama").innerHTML = "Hewan Pertama Yang Dihapus: " + HewanPertama;
+        // menampilkan panjang array dan semua elemennya
+        document.getElementById("Panjang").innerHTML = "Total Buah Setelah Penghapusan: " + Hewan.length; // "length" digunakan untuk menghitung jumlah hewan yang tersisa
+        document.getElementById("SemuaHewan").innerHTML = "Semua Hewan: " + Hewan.join(", ");
+    }
+    </script>
+    
+</body>
+</html>

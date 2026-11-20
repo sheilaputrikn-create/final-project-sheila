@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontrol 4 Lampu</title>
+    <style>
+        body {
+            font-family: arial, sans-serif;
+            background-color: rgb(184, 140, 224);
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            color: antiquewhite;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(2, 220px);
+            justify-content: center;
+            gap: 20px;
+
+        }
+
+        .lampu  {
+            background-color: rgb(223, 208, 187);
+            padding: 20px;
+            border-radius: 15px;
+           text-align: center;
+        }
+        .lampu p {
+            font-weight: bold;
+            color: rgb(136, 59, 15);
+        }
+
+        .img {
+            width: 100px;
+            display: block;
+            margin: 15px auto;
+        }
+
+        .button {
+            background-color: aquamarine;
+            color: rgb(136, 59, 15);
+            border: none;
+             padding: 10px 20px;
+             border-radius: 20px;
+             cursor: pointer;
+             margin: 5px;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background-color: aquamarine;
+            transform: scale(1.05);
+        }
+
+        .waktu {
+            color: aquamarine;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .bg-1 {
+                background-image: url(../image/cute.webp);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            .bg-2 {
+                background-image: url(../image/cute\ 2.webp);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            .bg-3 {
+                background-image: url(../image/cute\ 3.webp);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            .bg-4 {
+                background-image: url(../image/cute\ 4.webp);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        @media (max-width: 500px) {
+            .container {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 10px;
+            }
+            .lampu {
+                padding: 10px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<h2>Kontrol 4 Lampu Menggunakan JavaScript</h2>
+
+<a href="../finalproject/tabel.html">home</a>
+<a href="../finalproject/layout.html">layout</a>
+
+
+<div class="container">
+
+    <div class="lampu bg-1">
+        <p>Lampu 1</p>
+        <img id="lampu1" src="../image/lampumati.jpg">
+        <button onclick="nyalakanLampu(1)">Nyalakan</button>
+        <p class="waktu" id="waktu1"></p>
+    </div>
+
+    <div class="lampu bg-2">
+        <p>Lampu 2</p>
+        <img id="lampu2" src="../image/lampumati.jpg">
+        <button onclick="nyalakanLampu(2)">Nyalakan</button>
+        <p class="waktu" id="waktu2"></p>
+    </div>
+
+    <div class="lampu bg-3">
+        <p>Lampu 3</p>
+        <img id="lampu3" src="../image/lampumati.jpg">
+        <button onclick="nyalakanLampu(3)">Nyalakan</button>
+        <p class="waktu" id="waktu3"></p>
+    </div>
+
+    <div class="lampu bg-4">
+        <p>Lampu 4</p>
+        <img id="lampu4" src="../image/lampumati.jpg">
+        <button onclick="nyalakanLampu(4)">Nyalakan</button>
+        <p class="waktu" id="waktu4"></p>
+    </div>
+
+</div>
+
+
+    <script>
+        let timer = {};
+        let hitung = {};
+
+        function nyalakanLampu(nomor) {
+            document.getElementById('lampu' + nomor).src =
+                '../image/lampuhidup.jpg';
+
+            clearInterval(hitung[nomor]);
+            clearTimeout(timer[nomor]);
+
+            let detik = 3;
+
+            document.getElementById('waktu' + nomor).innerHTML =
+                'Lampu mati dalam ' + detik + ' detik';
+
+            hitung[nomor] = setInterval(function() {
+                detik--;
+
+                if (detik > 0) {
+                    document.getElementById('waktu' + nomor).innerHTML =
+                        'Lampu mati dalam ' + detik + ' detik';
+                } else {
+                    clearInterval(hitung[nomor]);
+                }
+            }, 1000);
+
+            timer[nomor] = setTimeout(function() {
+                matikanLampu(nomor);
+            }, 3000);
+        }
+
+        function matikanLampu(nomor) {
+            document.getElementById('lampu' + nomor).src =
+                '../image/lampumati.jpg';
+
+            clearTimeout(timer[nomor]);
+            clearInterval(hitung[nomor]);
+
+            document.getElementById('waktu' + nomor).innerHTML =
+                'Lampu sudah mati!';
+        }
+    </script>
+
+</body>
+</html>

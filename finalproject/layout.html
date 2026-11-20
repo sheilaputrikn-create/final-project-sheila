@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Sheila</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5efff;
+    color: #333;
+    line-height: 1.7;
+}
+
+header {
+    background: linear-gradient(135deg, #8e44ad, #d98bd8);
+    padding: 40px 20px;
+    text-align: center;
+    color: white;
+}
+
+header h1 {
+    font-size: 35px;
+}
+
+nav {
+    background-color: #6c3483;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-left {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-right {
+    display: flex;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 5px;
+    display: inline-block;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+.container {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(100, 50, 120, 0.12);
+    text-align: center;
+    /* transition: 0.3s; */
+}
+
+
+
+.card h2 {
+    color: #8e44ad;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #e8c8f0;
+    padding-bottom: 10px;
+}
+
+.card img {
+    max-width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.card p {
+    text-align: justify;
+    font-size: 15px;
+}
+
+.card a {
+    color: #9b59b6;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.card a:hover {
+    color: #e056a0;
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #6c3483;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+img {
+    height: 200px;
+    width: 200px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 700px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 25px;
+    }
+
+    nav a {
+        padding: 8px 12px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Selamat Datang Di Website Sheila</h1>
+    <p>Website Pribadi dan Project Informatika</p>
+</header>
+
+<nav>
+    <div class="nav-left">
+        <a href="./tabel.html">Home</a>
+        <a href="./controlLampu.html">Project</a>
+    </div>
+
+    <div class="nav-right">
+        <a href="./tabel.html">Back</a>
+    </div>
+</nav>
+
+<div class="container">
+
+    <!-- BIODATA -->
+    <div class="card" id="biodata">
+        <h2>Bio Data</h2>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVh3t53g6n7OiL9h3kfBg9OwIiUW5SA3hxVAumhqbyDg&s=10" alt="Zhang Linghe">
+
+        <p>
+        Zhang Linghe (张凌赫) adalah aktor asal Tiongkok yang lahir pada 30 Desember 1997 di Wuxi, Jiangsu. Ia dikenal karena memiliki paras yang tampan, postur tubuh yang tinggi, serta pesona elegan yang mampu menarik perhatian banyak penggemar. 
+        </p>
+    </div>
+
+    <!-- TEMPAT IMPIAN -->
+    <div class="card" id="impian">
+        <h2>Tempat Impian</h2>
+        <img src="https://bb71d2eac085c69b0.nos.wjv-1.neo.id/1654247122-182095/17373594261496-KWgT8OUESB.jpg" alt="Kota Chongqing">
+
+        <p>
+        Chongqing adalah salah satu kota metropolitan terbesar di Tiongkok yang terkenal dengan pemandangan kota yang megah, gedung-gedung pencakar langit, serta arsitektur unik yang memadukan keindahan modern dan tradisional.
+        </p>
+    </div>
+
+    <!-- PROJECT LAMPU -->
+    <div class="card" id="project">
+        <h2>Project Kontrol Lampu</h2>
+        <img src="../image/photo_6327753387553789866_x.jpg" alt="Project Kontrol Lampu" width="200px">
+
+        <p>
+        Project Kontrol Lampu Menggunakan JavaScript adalah sebuah program sederhana yang dibuat menggunakan HTML dan JavaScript untuk menghidupkan dan mematikan lampu melalui halaman website. 
+       </p>
+    </div>
+
+    <!-- MEDIA SOSIAL -->
+    <div class="card" id="sosmed">
+        <h2> Media Sosial</h2>
+
+        <img src="https://upload.wikimedia.org/wikipedia/en/a/a9/TikTok_logo.svg" alt="Logo TikTok">
+
+        <p>
+        TikTok adalah aplikasi media sosial yang digunakan untuk membuat, mengedit, dan membagikan video pendek.
+        </p>
+
+        <br>
+
+        <a href="https://www.tiktok.com/@shlptrii" target="_blank">
+    Kunjungi TikTok
+</a>
+    </div>
+
+</div>
+
+<footer>
+    <p>© 2026 Website Sheila | Project Informatika</p>
+</footer>
+
+</body>
+</html>
